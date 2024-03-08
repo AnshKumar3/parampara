@@ -1,15 +1,7 @@
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-
-import { AiFillYoutube } from "react-icons/ai";
-import { IoClose } from "react-icons/io5";
-import YouTube from "react-youtube";
-import { collection, doc, getDoc, getDocs, orderBy, query } from "firebase/firestore";
-import { auth, firestore } from "@/firebase/firebase";
-import { DBProblem } from "@/utils/types/problem";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, {} from "react";
 import { problems } from "@/mockProblems/problems";
 import { BsCheckCircle } from "react-icons/bs";
+import Link from "next/link";
 
 type ProblemsTableProps = {
 	
@@ -27,6 +19,17 @@ const ProblemsTable: React.FC<ProblemsTableProps> = () => {
 							<BsCheckCircle fontSize={"18"} width="18" />
 
                                 </th>
+                                  <td className="px-6 py-4">
+								  <Link className="hover:text-blue-600 cursor-pointer" href={`/problems/${doc.order}`}>
+                                         {doc.order}
+										 </Link>
+								  </td>
+
+								<td className="px-6 py-4">
+                                      <Link className="hover:text-blue-600 cursor-pointer" href={`/problems/${doc.id}`}>
+                                         {doc.title}
+									  </Link>
+								</td>
 					</tr>
 				)
 			})
