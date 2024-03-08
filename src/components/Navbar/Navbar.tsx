@@ -5,7 +5,7 @@ import React from "react";
 import { useSetRecoilState } from "recoil";
 type NavbarProps = {};
 
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<NavbarProps> = () =>{
 	const setAuthModalState = useSetRecoilState(authModalState);
 	const handleClick = () => {
 		setAuthModalState((prev) => ({ ...prev, isOpen: true }));
